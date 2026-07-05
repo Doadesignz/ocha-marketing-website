@@ -1,32 +1,44 @@
 import Link from "next/link";
+import { Mail } from "lucide-react";
 
 const navItems = [
     { label: "Problem", href: "#problem" },
     { label: "Solution", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "FAQs", href: "#faq" },
+    { label: "How it works", href: "#how-it-works" },
+    { label: "Faqs", href: "#faq" },
 ];
 
 export function Navbar() {
     return (
-        <header className="sticky top-0 z-50 border-b border-[color:var(--border)]/80 bg-[rgba(255,255,255,0.9)] backdrop-blur">
-            <div className="container-custom flex items-center justify-between py-4">
-                <Link href="#top" className="text-xl font-semibold tracking-[0.2em] text-[var(--ocha-dark)]">
-                    OCHA
-                </Link>
-                <nav className="hidden items-center gap-7 text-sm font-medium text-[var(--muted)] md:flex">
-                    {navItems.map((item) => (
-                        <Link key={item.href} href={item.href} className="transition hover:text-[var(--ocha-dark)]">
-                            {item.label}
-                        </Link>
-                    ))}
-                </nav>
-                <Link
-                    href="#waitlist"
-                    className="rounded-full border border-[var(--ocha-dark)] px-4 py-2 text-sm font-semibold text-[var(--ocha-dark)] transition hover:bg-[var(--ocha-dark)] hover:text-white"
-                >
-                    Join Waitlist
-                </Link>
+        <header className="sticky top-0 z-50 h-24">
+            <div className="absolute left-1/2 top-4 h-20 w-[60%] -translate-x-1/2 rounded-[16px] border-2 border-[var(--ocha-dark)] bg-white">
+                <div className="flex h-full w-full items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+                    <Link
+                        href="#top"
+                        aria-label="OCHA home"
+                        className="text-[2rem] font-black leading-none tracking-[-0.08em] text-[var(--ocha-dark)] sm:text-[2.35rem] xl:text-[3rem]"
+                    >
+                        OCHÁ
+                    </Link>
+                    <nav className="hidden flex-1 items-center justify-center gap-4 text-sm font-medium leading-none text-[var(--ocha-dark)] lg:flex xl:gap-8 xl:text-base">
+                        {navItems.map((item) => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className="transition-colors hover:text-[var(--ocha-aqua)]"
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
+                    </nav>
+                    <Link
+                        href="#waitlist"
+                        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border-[3px] border-[var(--ocha-dark)] bg-[var(--ocha-aqua)] px-3 text-sm font-bold leading-none text-[var(--ocha-dark)] shadow-[5px_6px_0_var(--ocha-dark)] transition-transform hover:-translate-y-0.5 hover:translate-x-0.5 hover:shadow-[3px_4px_0_var(--ocha-dark)] sm:px-5 sm:text-base lg:min-h-[52px]"
+                    >
+                        <Mail className="size-5 text-[var(--ocha-dark)]" strokeWidth={2.4} />
+                        Get Quote
+                    </Link>
+                </div>
             </div>
         </header>
     );

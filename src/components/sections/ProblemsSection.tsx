@@ -45,7 +45,7 @@ export function ProblemsSection() {
             <div className="container-custom">
                 <p className="eyebrow">What OCHA understands and solves</p>
                 <h2 className="section-heading mt-3 max-w-3xl">
-                    Operational complexity shouldn't slow growth.
+                    Operational complexity shouldn&apos;t slow growth.
                 </h2>
                 <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                     {problems.map((problem) => {

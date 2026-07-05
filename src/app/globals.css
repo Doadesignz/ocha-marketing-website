@@ -9,13 +9,68 @@
   --border: rgba(28, 28, 28, 0.16);
   --card: #ffffff;
   --radius: 1.5rem;
+  --font-primary: var(--font-host-grotesk, "Host Grotesk"), Arial, sans-serif;
+  --font-secondary: var(--font-hubot-sans, "Hubot Sans"), Arial, sans-serif;
+
+  --type-title-1-size: 4.5rem;
+  --type-title-1-line: 5.375rem;
+  --type-title-1-tracking: -0.05rem;
+  --type-title-2-size: 4rem;
+  --type-title-2-line: 4.75rem;
+  --type-title-2-tracking: -0.0375rem;
+  --type-title-3-size: 3.5rem;
+  --type-title-3-line: 4.25rem;
+  --type-title-3-tracking: -0.0375rem;
+
+  --type-heading-1-size: 3.5rem;
+  --type-heading-1-line: 4.25rem;
+  --type-heading-1-tracking: -0.03125rem;
+  --type-heading-2-size: 3rem;
+  --type-heading-2-line: 3.625rem;
+  --type-heading-2-tracking: -0.025rem;
+  --type-heading-3-size: 2.5rem;
+  --type-heading-3-line: 3rem;
+  --type-heading-3-tracking: -0.01875rem;
+  --type-heading-4-size: 2rem;
+  --type-heading-4-line: 2.375rem;
+  --type-heading-4-tracking: -0.0125rem;
+  --type-heading-5-size: 1.5rem;
+  --type-heading-5-line: 1.875rem;
+  --type-heading-5-tracking: -0.01rem;
+  --type-heading-6-size: 1.25rem;
+  --type-heading-6-line: 1.5rem;
+  --type-heading-6-tracking: 0;
+
+  --type-body-1-size: 1.125rem;
+  --type-body-1-line: 1.75rem;
+  --type-body-2-size: 1rem;
+  --type-body-2-line: 1.5rem;
+  --type-body-3-size: 0.875rem;
+  --type-body-3-line: 1.25rem;
+  --type-body-4-size: 0.75rem;
+  --type-body-4-line: 1rem;
+
+  --type-label-1-size: 1rem;
+  --type-label-1-line: 1.375rem;
+  --type-label-1-tracking: -0.01125rem;
+  --type-label-2-size: 0.875rem;
+  --type-label-2-line: 1.25rem;
+  --type-label-2-tracking: -0.01rem;
+  --type-label-3-size: 0.75rem;
+  --type-label-3-line: 1rem;
+  --type-label-3-tracking: -0.0075rem;
+
+  --type-caption-1-size: 0.625rem;
+  --type-caption-1-line: 0.75rem;
+  --type-caption-2-size: 0.5625rem;
+  --type-caption-2-line: 0.625rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Host Grotesk", Arial, sans-serif;
-  --font-mono: "Host Grotesk", monospace;
+  --font-sans: var(--font-primary);
+  --font-mono: var(--font-primary);
 }
 
 html {
@@ -26,7 +81,9 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: "Host Grotesk", Arial, sans-serif;
+  font-family: var(--font-primary);
+  font-size: var(--type-body-2-size);
+  line-height: var(--type-body-2-line);
 }
 
 * {
@@ -43,31 +100,61 @@ body {
 }
 
 .display-heading {
-  font-size: clamp(2.6rem, 5vw, 4.7rem);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+  font-family: var(--font-secondary);
+  font-size: clamp(var(--type-heading-2-size), 5vw, var(--type-title-1-size));
+  line-height: 1.04;
+  letter-spacing: var(--type-title-1-tracking);
   font-weight: 700;
-  font-family: "Hubot Sans", Arial, sans-serif;
 }
 
 .section-heading {
-  font-size: clamp(2rem, 3.4vw, 2.8rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-family: var(--font-secondary);
+  font-size: clamp(var(--type-heading-4-size), 3.4vw, var(--type-heading-2-size));
+  line-height: 1.2;
+  letter-spacing: var(--type-heading-2-tracking);
   font-weight: 700;
-  font-family: "Hubot Sans", Arial, sans-serif;
 }
 
 .body-copy {
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: var(--type-body-1-size);
+  line-height: var(--type-body-1-line);
+  letter-spacing: 0;
   color: var(--muted);
 }
 
 .eyebrow {
-  font-size: 0.8rem;
-  letter-spacing: 0.28em;
+  font-size: var(--type-label-3-size);
+  line-height: var(--type-label-3-line);
+  letter-spacing: var(--type-label-3-tracking);
   text-transform: uppercase;
   font-weight: 700;
   color: var(--ocha-dark);
+}
+
+.title-1 {
+  font-family: var(--font-secondary);
+  font-size: var(--type-title-1-size);
+  line-height: var(--type-title-1-line);
+  letter-spacing: var(--type-title-1-tracking);
+  font-weight: 700;
+}
+
+.heading-5 {
+  font-size: var(--type-heading-5-size);
+  line-height: var(--type-heading-5-line);
+  letter-spacing: var(--type-heading-5-tracking);
+  font-weight: 700;
+}
+
+.label-1 {
+  font-size: var(--type-label-1-size);
+  line-height: var(--type-label-1-line);
+  letter-spacing: var(--type-label-1-tracking);
+  font-weight: 600;
+}
+
+.caption-1 {
+  font-size: var(--type-caption-1-size);
+  line-height: var(--type-caption-1-line);
+  letter-spacing: 0;
 }
