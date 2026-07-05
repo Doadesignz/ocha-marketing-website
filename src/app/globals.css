@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --ocha-aqua: #b1fbff;
+  --ocha-dark: #1c1c1c;
+  --background: #ffffff;
+  --foreground: #1c1c1c;
+  --muted: rgba(28, 28, 28, 0.72);
+  --border: rgba(28, 28, 28, 0.16);
+  --card: #ffffff;
+  --radius: 1.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Host Grotesk", Arial, sans-serif;
+  --font-mono: "Host Grotesk", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Host Grotesk", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container-custom {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.section-padding {
+  padding: 5rem 1.5rem;
+}
+
+.display-heading {
+  font-size: clamp(2.6rem, 5vw, 4.7rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  font-family: "Hubot Sans", Arial, sans-serif;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  font-family: "Hubot Sans", Arial, sans-serif;
+}
+
+.body-copy {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ocha-dark);
+}
