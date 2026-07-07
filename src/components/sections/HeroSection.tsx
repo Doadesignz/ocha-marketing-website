@@ -10,7 +10,7 @@ const featureBadges = [
 
 export function HeroSection() {
     return (
-        <section id="top" className="bg-[var(--ocha-aqua)] px-6 py-16 sm:px-8 lg:px-10 lg:py-24">
+        <section id="top" className="bg-[var(--ocha-aqua)] px-6 pb-16 pt-32 sm:px-8 lg:px-10 lg:pb-24 lg:pt-40">
             <div className="container-custom grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
                 <div className="max-w-2xl">
                     <p className="eyebrow">Fulfilment infrastructure for modern merchants</p>
@@ -23,7 +23,7 @@ export function HeroSection() {
                     <div className="mt-8 flex flex-wrap gap-3">
                         <Link
                             href="#waitlist"
-                            className="inline-flex items-center gap-2 rounded-full bg-[var(--ocha-dark)] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+                            className="inline-flex items-center gap-2 rounded-full border border-[var(--ocha-dark)] bg-[var(--ocha-aqua)] px-6 py-3 text-sm font-semibold text-[var(--ocha-dark)] transition hover:bg-white"
                         >
                             Join Waitlist <ArrowRight size={16} />
                         </Link>
@@ -51,23 +51,23 @@ export function HeroSection() {
                     </div>
                 </div>
                 <div className="rounded-[2rem] border border-[var(--ocha-dark)]/10 bg-white/70 p-6 shadow-[0_25px_80px_rgba(28,28,28,0.08)] backdrop-blur">
-                    <div className="rounded-[1.5rem] border border-[var(--ocha-dark)]/10 bg-[var(--ocha-dark)] p-6 text-white">
+                    <div className="rounded-[1.5rem] border border-[var(--ocha-dark)]/10 bg-[var(--ocha-aqua)] p-6 text-[var(--ocha-dark)]">
                         <div className="flex items-center justify-between">
                             <div>
-                                <p className="text-sm uppercase tracking-[0.3em] text-white/65">Inventory live</p>
+                                <p className="text-sm uppercase tracking-[0.3em] text-[var(--ocha-dark)]/65">Inventory live</p>
                                 <p className="mt-2 text-3xl font-semibold">18,240 units</p>
                             </div>
-                            <div className="rounded-full bg-[var(--ocha-aqua)]/20 px-3 py-2 text-sm font-semibold text-[var(--ocha-aqua)]">
+                            <div className="rounded-full bg-white/60 px-3 py-2 text-sm font-semibold text-[var(--ocha-dark)]">
                                 +12% this week
                             </div>
                         </div>
                         <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                            <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                                <p className="text-sm text-white/70">Fulfilment SLA</p>
+                            <div className="rounded-2xl border border-[var(--ocha-dark)]/10 bg-white/45 p-4">
+                                <p className="text-sm text-[var(--ocha-dark)]/70">Fulfilment SLA</p>
                                 <p className="mt-2 text-xl font-semibold">Same day dispatch</p>
                             </div>
-                            <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                                <p className="text-sm text-white/70">Authenticate</p>
+                            <div className="rounded-2xl border border-[var(--ocha-dark)]/10 bg-white/45 p-4">
+                                <p className="text-sm text-[var(--ocha-dark)]/70">Authenticate</p>
                                 <p className="mt-2 text-xl font-semibold">100% reviewed</p>
                             </div>
                         </div>

@@ -10,8 +10,8 @@ const navItems = [
 
 export function Navbar() {
     return (
-        <header className="sticky top-0 z-50 h-24">
-            <div className="absolute left-1/2 top-4 h-20 w-[60%] -translate-x-1/2 rounded-[16px] border-2 border-[var(--ocha-dark)] bg-white">
+        <header className="pointer-events-none fixed inset-x-0 top-4 z-50 h-20">
+            <div className="pointer-events-auto absolute left-1/2 top-0 h-20 w-[60%] -translate-x-1/2 rounded-[16px] border-2 border-[var(--ocha-dark)] bg-white">
                 <div className="flex h-full w-full items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
                     <Link
                         href="#top"
