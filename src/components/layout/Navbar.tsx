@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail } from "lucide-react";
 
 const navItems = [
@@ -11,14 +12,21 @@ const navItems = [
 export function Navbar() {
     return (
         <header className="pointer-events-none fixed inset-x-0 top-4 z-50 h-20">
-            <div className="pointer-events-auto absolute left-1/2 top-0 h-20 w-[60%] -translate-x-1/2 rounded-[16px] border-2 border-[var(--ocha-dark)] bg-white">
+            <div className="pointer-events-auto absolute left-1/2 top-0 h-20 w-[80%] -translate-x-1/2 rounded-[16px] border-2 border-[var(--ocha-dark)] bg-white lg:w-[60%]">
                 <div className="flex h-full w-full items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
                     <Link
                         href="#top"
                         aria-label="OCHA home"
-                        className="text-[2rem] font-black leading-none tracking-[-0.08em] text-[var(--ocha-dark)] sm:text-[2.35rem] xl:text-[3rem]"
+                        className="block w-[112px] shrink-0 sm:w-[150px] xl:w-[180px]"
                     >
-                        OCHÁ
+                        <Image
+                            src="/logos/ocha-logo-black.png"
+                            alt="OCHA"
+                            width={591}
+                            height={162}
+                            priority
+                            className="h-auto w-full"
+                        />
                     </Link>
                     <nav className="hidden flex-1 items-center justify-center gap-4 text-sm font-medium leading-none text-[var(--ocha-dark)] lg:flex xl:gap-8 xl:text-base">
                         {navItems.map((item) => (

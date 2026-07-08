@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+studio-ocha/node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -19,6 +20,8 @@
 
 # production
 /build
+studio-ocha/dist/
+studio-ocha/.sanity/
 
 # misc
 .DS_Store

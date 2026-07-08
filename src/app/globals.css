@@ -158,3 +158,33 @@ body {
   line-height: var(--type-caption-1-line);
   letter-spacing: 0;
 }
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-hero-copy {
+  animation: hero-copy-in 700ms ease-out both;
+}
+
+.animate-hero-card {
+  animation: hero-card-in 850ms 120ms ease-out both;
+}

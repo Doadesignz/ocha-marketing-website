@@ -11,6 +11,8 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "studio-ocha/dist/**",
+    "studio-ocha/node_modules/**",
     "next-env.d.ts",
   ]),
 ]);

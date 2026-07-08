@@ -1,4 +1,5 @@
-import { ArrowUpRight, Boxes, CircleDollarSign, ShieldCheck, Truck, Warehouse } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Boxes, CircleDollarSign, ShieldCheck, Truck, Warehouse } from "lucide-react";
 
 const problems = [
     {
@@ -63,6 +64,15 @@ export function ProblemsSection() {
                             </div>
                         );
                     })}
+                </div>
+                <div className="mt-10 flex justify-center">
+                    <Link
+                        href="#features"
+                        className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border-2 border-[var(--ocha-dark)] bg-[var(--ocha-aqua)] px-6 text-sm font-bold text-[var(--ocha-dark)] shadow-[5px_6px_0_var(--ocha-dark)] transition-transform hover:-translate-y-0.5 hover:translate-x-0.5 hover:shadow-[3px_4px_0_var(--ocha-dark)]"
+                    >
+                        View our solution
+                        <ArrowRight size={18} className="animate-bounce" />
+                    </Link>
                 </div>
             </div>
         </section>
