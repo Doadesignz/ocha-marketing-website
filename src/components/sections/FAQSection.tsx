@@ -4,7 +4,6 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { hasSanityConfig, sanityClient } from "@/lib/sanity";
 
 type FAQ = {
     _id?: string;
@@ -95,6 +94,34 @@ const faqQuery = `*[_type == "faq"] | order(order asc) {
     question,
     answer
 }`;
+const sanityFetchTimeoutMs = 2500;
+const sanityProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const sanityDataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+const sanityApiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION ?? "2026-07-08";
+const hasSanityConfig = Boolean(sanityProjectId && sanityDataset);
+
+async function fetchSanityFaqs(): Promise<FAQ[]> {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), sanityFetchTimeoutMs);
+    const url = new URL(`https://${sanityProjectId}.api.sanity.io/v${sanityApiVersion}/data/query/${sanityDataset}`);
+    url.searchParams.set("query", faqQuery);
+
+    try {
+        const response = await fetch(url, {
+            next: { revalidate: 60 },
+            signal: controller.signal,
+        });
+
+        if (!response.ok) {
+            return fallbackFaqs;
+        }
+
+        const data = (await response.json()) as { result?: FAQ[] };
+        return data.result && data.result.length > 0 ? data.result : fallbackFaqs;
+    } finally {
+        clearTimeout(timeout);
+    }
+}
 
 async function getFaqs(): Promise<FAQ[]> {
     if (!hasSanityConfig) {
@@ -102,13 +129,7 @@ async function getFaqs(): Promise<FAQ[]> {
     }
 
     try {
-        const faqs = await sanityClient.fetch<FAQ[]>(
-            faqQuery,
-            {},
-            { next: { revalidate: 60 } }
-        );
-
-        return faqs.length > 0 ? faqs : fallbackFaqs;
+        return await fetchSanityFaqs();
     } catch {
         return fallbackFaqs;
     }

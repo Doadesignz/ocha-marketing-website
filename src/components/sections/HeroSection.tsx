@@ -1,88 +1,77 @@
-import Link from "next/link";
-import { ArrowRight, Boxes, ShieldCheck, Warehouse } from "lucide-react";
-import { HeroBackgroundVideo } from "./HeroBackgroundVideo";
+import Image from "next/image";
+import { Boxes } from "lucide-react";
+import { HeroRiveIllustration } from "./HeroRiveIllustration";
 
-const cloudinaryCloudName = process.env.CLOUDINARY_CLOUD_NAME ?? process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
-const heroVideoPublicId = "magnific_take-out-any-text-on-the-_e8WkKiydqL_kauly8";
-const heroVideoUrl = cloudinaryCloudName
-    ? `https://res.cloudinary.com/${cloudinaryCloudName}/video/upload/so_0,eo_5.5/${heroVideoPublicId}.mp4`
-    : undefined;
-const countries = ["Nigeria", "Kenya", "Uganda", "Tanzania", "Zambia", "Zimbabwe", "UK", "Canada"];
-const featureBadges = [
-    { label: "Real-time inventory", icon: Boxes },
-    { label: "Anti-counterfeit", icon: ShieldCheck },
-    { label: "Multi-warehouse", icon: Warehouse },
+const avatars = [
+    { label: "Merchant", src: "/avatars/ellipse-84.png", className: "border-[#3157ff]" },
+    { label: "Customer", src: "/avatars/ellipse-85.png", className: "border-[#7a4af4] -ml-5" },
+    { label: "Buyer", src: "/avatars/ellipse-86.png", className: "border-[#ff4b1f] -ml-5" },
 ];
 
 export function HeroSection() {
     return (
-        <section id="top" className="relative flex min-h-screen overflow-hidden bg-[var(--ocha-aqua)] px-6 pb-16 pt-32 sm:px-8 lg:px-10 lg:pb-24 lg:pt-40">
-            <HeroBackgroundVideo src={heroVideoUrl} />
-            <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
-            <div className="container-custom relative z-10 grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-                <div className="max-w-2xl animate-hero-copy">
-                    <p className="eyebrow text-white/80">Fulfilment infrastructure for modern merchants</p>
-                    <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-secondary)] text-[clamp(2.7rem,5.2vw,4.05rem)] font-bold leading-[1.08] tracking-[-0.04rem] text-white">
-                        <span className="text-[var(--ocha-aqua)]">From warehouse to customer,</span>{" "}
-                        nothing gets lost.
+        <section
+            id="top"
+            className="relative flex min-h-screen overflow-hidden bg-[var(--ocha-aqua)] px-5 pb-[38vh] pt-32 text-[var(--ocha-dark)] sm:px-8 sm:pb-[42vh] lg:px-10 lg:pb-[44vh]"
+        >
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(28,28,28,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(28,28,28,0.12)_1px,transparent_1px)] bg-[length:56px_56px]" aria-hidden="true" />
+            <div className="absolute inset-x-0 bottom-0 h-[52vh] bg-gradient-to-b from-transparent via-transparent to-[rgba(177,251,255,0.88)]" aria-hidden="true" />
+
+            <div className="container-custom relative z-10 flex justify-center">
+                <div className="animate-hero-copy mt-8 w-full max-w-[980px] text-center sm:mt-12 lg:mt-16">
+                    <h1 className="font-[family-name:var(--font-secondary)] text-[clamp(2.75rem,6vw,4.5rem)] font-extrabold leading-[1.05] tracking-[0] text-black">
+                        <span className="flex flex-nowrap items-center justify-center gap-2 whitespace-nowrap sm:gap-3">
+                            From
+                            <span className="relative inline-flex translate-y-1 items-center gap-1.5 rounded-[1.45rem] border-[3px] border-black bg-white px-3 py-1 align-middle text-[0.48em] leading-none shadow-[0_8px_0_black] sm:gap-3 sm:rounded-[2.6rem] sm:border-[5px] sm:px-8 sm:py-2 sm:text-[0.55em] sm:shadow-[0_14px_0_black]">
+                                warehouse
+                                <span className="inline-flex size-10 items-center justify-center overflow-hidden rounded-full bg-[var(--ocha-aqua)] sm:size-16">
+                                    <Image
+                                        src="/animations/warehouse.gif"
+                                        alt=""
+                                        width={64}
+                                        height={64}
+                                        unoptimized
+                                        className="h-full w-full object-cover"
+                                    />
+                                </span>
+                            </span>
+                            to
+                        </span>
+                        <span className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+                            customer
+                            <span className="flex items-center">
+                                {avatars.map((avatar) => (
+                                    <span
+                                        key={avatar.label}
+                                        aria-label={avatar.label}
+                                        className={`relative flex size-16 items-center justify-center overflow-hidden rounded-full border-[5px] bg-white shadow-[0_8px_18px_rgba(28,28,28,0.18)] sm:size-20 ${avatar.className}`}
+                                    >
+                                        <Image
+                                            src={avatar.src}
+                                            alt=""
+                                            width={80}
+                                            height={80}
+                                            className="h-full w-full object-cover"
+                                        />
+                                    </span>
+                                ))}
+                            </span>
+                        </span>
+                        <span className="mt-3 block">nothing gets lost.</span>
                     </h1>
-                    <p className="body-copy mt-6 max-w-xl text-lg !text-white">
-                        Warehousing, fulfilment, and delivery with real-time inventory transparency, product authentication, and full visibility from shelf to customer.
-                    </p>
-                    <div className="mt-8 flex flex-wrap gap-3">
-                        <Link
-                            href="#waitlist"
-                            className="inline-flex items-center gap-2 rounded-full border border-[var(--ocha-dark)] bg-[var(--ocha-aqua)] px-6 py-3 text-sm font-semibold text-[var(--ocha-dark)] transition hover:bg-white"
-                        >
-                            Join Waitlist <ArrowRight size={16} />
-                        </Link>
-                        <Link
-                            href="#how-it-works"
-                            className="rounded-full border border-white bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-[var(--ocha-dark)]"
-                        >
-                            See How It Works
-                        </Link>
-                    </div>
-                    <div className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-white/90">
-                        {countries.map((country) => (
-                            <span key={country} className="rounded-full border border-white/20 bg-black/25 px-3 py-1.5 backdrop-blur">
-                                {country}
+
+                    <div className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-3 text-sm font-bold sm:text-base">
+                        {["Inventory live", "24 hour SLA", "Product authentication"].map((item) => (
+                            <span key={item} className="inline-flex items-center gap-2 rounded-full border-2 border-black/15 bg-white/55 px-4 py-2 backdrop-blur">
+                                <Boxes className="size-4" />
+                                {item}
                             </span>
                         ))}
                     </div>
-                    <div className="mt-8 flex flex-wrap gap-3">
-                        {featureBadges.map(({ label, icon: Icon }) => (
-                            <div key={label} className="flex items-center gap-2 rounded-full border border-white/20 bg-black/25 px-3 py-2 text-sm text-white/80 backdrop-blur">
-                                <Icon size={16} className="text-[var(--ocha-aqua)]" />
-                                {label}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="animate-hero-card rounded-[2rem] border border-[var(--ocha-dark)]/10 bg-white/70 p-6 shadow-[0_25px_80px_rgba(28,28,28,0.08)] backdrop-blur">
-                    <div className="rounded-[1.5rem] border border-[var(--ocha-dark)]/10 bg-[var(--ocha-aqua)] p-6 text-[var(--ocha-dark)]">
-                        <div className="flex items-center justify-between">
-                            <div>
-                                <p className="text-sm uppercase tracking-[0.3em] text-[var(--ocha-dark)]/65">Inventory live</p>
-                                <p className="mt-2 text-3xl font-semibold">18,240 units</p>
-                            </div>
-                            <div className="rounded-full bg-white/60 px-3 py-2 text-sm font-semibold text-[var(--ocha-dark)]">
-                                +12% this week
-                            </div>
-                        </div>
-                        <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                            <div className="rounded-2xl border border-[var(--ocha-dark)]/10 bg-white/45 p-4">
-                                <p className="text-sm text-[var(--ocha-dark)]/70">Fulfilment SLA</p>
-                                <p className="mt-2 text-xl font-semibold">24 hours</p>
-                            </div>
-                            <div className="rounded-2xl border border-[var(--ocha-dark)]/10 bg-white/45 p-4">
-                                <p className="text-sm text-[var(--ocha-dark)]/70">Authenticate</p>
-                                <p className="mt-2 text-xl font-semibold">100% reviewed</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+
+            <HeroRiveIllustration />
         </section>
     );
 }
