@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Boxes } from "lucide-react";
 import { HeroRiveIllustration } from "./HeroRiveIllustration";
 
 const avatars = [
@@ -7,6 +6,7 @@ const avatars = [
     { label: "Customer", src: "/avatars/ellipse-85.png", className: "border-[#7a4af4] -ml-5" },
     { label: "Buyer", src: "/avatars/ellipse-86.png", className: "border-[#ff4b1f] -ml-5" },
 ];
+const locations = ["Kenya", "Uganda", "Tanzania", "Zambia", "Zimbabwe", "America", "Canada", "London"];
 
 export function HeroSection() {
     return (
@@ -60,10 +60,9 @@ export function HeroSection() {
                         <span className="mt-3 block">nothing gets lost.</span>
                     </h1>
 
-                    <div className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-3 text-sm font-bold sm:text-base">
-                        {["Inventory live", "24 hour SLA", "Product authentication"].map((item) => (
-                            <span key={item} className="inline-flex items-center gap-2 rounded-full border-2 border-black/15 bg-white/55 px-4 py-2 backdrop-blur">
-                                <Boxes className="size-4" />
+                    <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2 text-xs font-bold sm:gap-3 sm:text-sm">
+                        {locations.map((item) => (
+                            <span key={item} className="inline-flex items-center rounded-full border-2 border-black/15 bg-white/55 px-4 py-2 backdrop-blur">
                                 {item}
                             </span>
                         ))}

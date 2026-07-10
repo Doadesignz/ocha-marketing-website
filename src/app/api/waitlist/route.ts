@@ -96,13 +96,10 @@ export async function POST(request: Request) {
         });
 
         if (error) {
-            return NextResponse.json(
-                {
-                    success: false,
-                    message: "Unable to email your application right now.",
-                },
-                { status: 502 }
-            );
+            console.error("Unable to email waitlist application", {
+                name: error.name,
+                message: error.message,
+            });
         }
 
         return NextResponse.json(

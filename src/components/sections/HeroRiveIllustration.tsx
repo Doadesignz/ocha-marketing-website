@@ -117,7 +117,7 @@ export function HeroRiveIllustration() {
     return (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[38vh] min-h-[260px] overflow-hidden sm:h-[42vh] lg:h-[46vh]" aria-hidden="true">
             {hasRiveFile ? (
-                <RiveComponent className="absolute inset-0 h-full w-full" />
+                <RiveComponent className="absolute bottom-0 left-1/2 h-full w-screen -translate-x-1/2 sm:w-full" />
             ) : (
                 <HeroIllustrationFallback />
             )}
