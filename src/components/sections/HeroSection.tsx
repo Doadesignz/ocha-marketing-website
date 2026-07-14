@@ -6,7 +6,22 @@ const avatars = [
     { label: "Customer", src: "/avatars/ellipse-85.png", className: "border-[#7a4af4] -ml-5" },
     { label: "Buyer", src: "/avatars/ellipse-86.png", className: "border-[#ff4b1f] -ml-5" },
 ];
-const locations = ["Kenya", "Uganda", "Tanzania", "Zambia", "Zimbabwe", "America", "Canada", "London"];
+const locations = [
+    "Nigeria(HQ)",
+    "Kenya",
+    "Uganda",
+    "Tanzania",
+    "Zambia",
+    "Zimbabwe",
+    "USA",
+    "Canada",
+    "Europe",
+];
+const mobileFeaturePills = [
+    "Connected inventory.",
+    "Controlled fulfilment.",
+    "Confident delivery.",
+];
 
 export function HeroSection() {
     return (
@@ -59,6 +74,17 @@ export function HeroSection() {
                         </span>
                         <span className="mt-3 block">nothing gets lost.</span>
                     </h1>
+
+                    <div className="mx-auto mt-6 flex w-full max-w-[320px] flex-col items-stretch gap-2 sm:hidden">
+                        {mobileFeaturePills.map((item) => (
+                            <span
+                                key={item}
+                                className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-white/65 bg-white/35 px-5 py-2.5 text-center text-[13px] font-extrabold text-[var(--ocha-dark)] shadow-[inset_0_1px_0_rgba(255,255,255,0.72),0_12px_34px_rgba(28,28,28,0.14)] backdrop-blur-xl"
+                            >
+                                {item}
+                            </span>
+                        ))}
+                    </div>
 
                     <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2 text-xs font-bold sm:gap-3 sm:text-sm">
                         {locations.map((item) => (

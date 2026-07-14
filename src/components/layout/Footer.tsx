@@ -14,17 +14,6 @@ const socialLinks = [
             );
         },
     },
-    {
-        label: "X",
-        href: "https://x.com/ocha_africa",
-        icon: function XIcon({ className }: { className?: string }) {
-            return (
-                <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18.9 2h3.3l-7.3 8.3 8.5 11.7h-6.7l-5.2-7.1L5.6 22H2.3l7.8-8.9L2 2h6.8l4.7 6.4L18.9 2Zm-1.2 17.9h1.8L7.8 4H5.9l11.8 15.9Z" />
-                </svg>
-            );
-        },
-    },
 ];
 
 export function Footer() {
@@ -44,7 +33,7 @@ export function Footer() {
                     </p>
                 </div>
                 <div className="text-sm text-white/70">
-                    <p>hello@ocha.co</p>
+                    <p>Partnerships@ocha.africa</p>
                     <p>Warehouse, fulfilment, and delivery without confusion.</p>
                     <div className="mt-4 flex gap-3 md:justify-end">
                         {socialLinks.map(({ label, href, icon: Icon }) => (
