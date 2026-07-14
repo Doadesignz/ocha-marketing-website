@@ -18,9 +18,9 @@ const locations = [
     "Europe",
 ];
 const mobileFeaturePills = [
-    "Connected inventory.",
-    "Controlled fulfilment.",
-    "Confident delivery.",
+    "Fulfillment",
+    "Warehousing",
+    "International delivery",
 ];
 
 export function HeroSection() {
