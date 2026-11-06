@@ -79,7 +79,7 @@ export function WaitlistFormSection() {
                     <p className="eyebrow">Merchant onboarding</p>
                     <h2 className="section-heading mt-3">Apply to join OCHA.</h2>
                     <p className="body-copy mt-5 text-lg text-[var(--muted)]">
-                        Tell us about your business so we can prepare the right onboarding experience when OCHA launches.
+                        Tell us about your business so we can prepare the right onboarding experience.
                     </p>
                 </div>
                 <div className="rounded-[2rem] border border-[color:var(--border)]/80 bg-[var(--ocha-aqua)]/30 p-6 shadow-sm sm:p-8">

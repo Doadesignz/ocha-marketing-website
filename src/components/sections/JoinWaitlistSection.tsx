@@ -8,7 +8,7 @@ export function JoinWaitlistSection() {
                     <p className="eyebrow">Become an OCHA merchant</p>
                     <h2 className="section-heading mt-3">Tell us about your business so we can prepare the right onboarding experience.</h2>
                     <p className="body-copy mt-5 text-lg text-[var(--muted)]">
-                        We will review your fulfilment needs and reach out when OCHA launches.
+                        We will review your fulfilment needs and reach out to get you started.
                     </p>
                 </div>
                 <div className="mt-8">

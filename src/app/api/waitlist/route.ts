@@ -70,7 +70,7 @@ export async function POST(request: Request) {
             {
                 success: true,
                 message:
-                    "Application received. Our team will review your details and contact you when onboarding opens.",
+                    "Application received. Our team will review your details and contact you to get you onboarded.",
             },
             { status: 201 }
         );
