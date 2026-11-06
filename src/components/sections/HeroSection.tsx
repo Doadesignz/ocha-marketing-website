@@ -20,7 +20,6 @@ const locations = [
 const mobileFeaturePills = [
     "Fulfillment",
     "Warehousing",
-    "International delivery",
 ];
 
 export function HeroSection() {

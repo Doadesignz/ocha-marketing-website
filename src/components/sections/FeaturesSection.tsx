@@ -139,7 +139,7 @@ export function FeaturesSection() {
                             OCHA brings your warehouses, orders, and deliveries into one clear system. You always know what you have, where it is, and what is happening next.
                         </p>
                         <a
-                            href="#waitlist"
+                            href="#apply"
                             className="mt-10 inline-flex items-center gap-3 rounded-full border-2 border-[var(--ocha-dark)] bg-[var(--ocha-aqua)] px-8 py-4 text-base font-bold text-[var(--ocha-dark)] shadow-[5px_5px_0_var(--ocha-dark)] transition hover:-translate-y-0.5 hover:shadow-[7px_7px_0_var(--ocha-dark)]"
                         >
                             <PhoneCall size={18} />

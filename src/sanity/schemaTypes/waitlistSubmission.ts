@@ -2,8 +2,9 @@ import { defineField, defineType } from "sanity";
 
 export const waitlistSubmission = defineType({
   name: "waitlistSubmission",
-  title: "Waitlist Submission",
+  title: "Merchant Application",
   type: "document",
+  fieldsets: [{ name: "socials", title: "Social Handles" }],
   fields: [
     defineField({
       name: "companyName",
@@ -33,6 +34,30 @@ export const waitlistSubmission = defineType({
       name: "website",
       title: "Website URL",
       type: "url",
+    }),
+    defineField({
+      name: "instagram",
+      title: "Instagram",
+      type: "string",
+      fieldset: "socials",
+    }),
+    defineField({
+      name: "tiktok",
+      title: "TikTok",
+      type: "string",
+      fieldset: "socials",
+    }),
+    defineField({
+      name: "x",
+      title: "X (Twitter)",
+      type: "string",
+      fieldset: "socials",
+    }),
+    defineField({
+      name: "facebook",
+      title: "Facebook",
+      type: "string",
+      fieldset: "socials",
     }),
     defineField({
       name: "country",

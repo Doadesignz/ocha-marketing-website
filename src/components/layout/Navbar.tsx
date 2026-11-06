@@ -40,7 +40,7 @@ export function Navbar() {
                         ))}
                     </nav>
                     <Link
-                        href="#waitlist"
+                        href="#apply"
                         className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border-[3px] border-[var(--ocha-dark)] bg-[var(--ocha-aqua)] px-3 text-sm font-bold leading-none text-[var(--ocha-dark)] shadow-[5px_6px_0_var(--ocha-dark)] transition-transform hover:-translate-y-0.5 hover:translate-x-0.5 hover:shadow-[3px_4px_0_var(--ocha-dark)] sm:px-5 sm:text-base lg:min-h-[52px]"
                     >
                         <Mail className="size-5 text-[var(--ocha-dark)]" strokeWidth={2.4} />

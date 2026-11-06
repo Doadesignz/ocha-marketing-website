@@ -14,6 +14,12 @@ import { waitlistSchema, type WaitlistFormValues } from "@/lib/validations/waitl
 const countries = ["Nigeria", "Kenya", "Uganda", "Tanzania", "Zambia", "Zimbabwe"];
 const monthlyVolumes = ["0-50", "51-200", "201-500", "501-1000", "1000+"];
 const salesChannels = ["Website", "Shopify", "Instagram", "WhatsApp", "Marketplace", "Other"];
+const socialFields = [
+    { name: "instagram", label: "Instagram", placeholder: "@yourbrand" },
+    { name: "tiktok", label: "TikTok", placeholder: "@yourbrand" },
+    { name: "x", label: "X (Twitter)", placeholder: "@yourbrand" },
+    { name: "facebook", label: "Facebook", placeholder: "facebook.com/yourbrand" },
+] as const;
 
 export function WaitlistFormSection() {
     const [feedback, setFeedback] = useState<string | null>(null);
@@ -28,6 +34,10 @@ export function WaitlistFormSection() {
             email: "",
             phoneNumber: "",
             website: "",
+            instagram: "",
+            tiktok: "",
+            x: "",
+            facebook: "",
             country: "",
             monthlyOrderVolume: "",
             salesChannel: "",
@@ -63,11 +73,11 @@ export function WaitlistFormSection() {
     }
 
     return (
-        <section id="waitlist" className="px-6 py-16 sm:px-8 lg:px-10 lg:py-24">
+        <section id="apply" className="scroll-mt-24 px-6 py-16 sm:px-8 lg:px-10 lg:py-24">
             <div className="container-custom grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
                 <div>
                     <p className="eyebrow">Merchant onboarding</p>
-                    <h2 className="section-heading mt-3">Apply to join the OCHA waitlist.</h2>
+                    <h2 className="section-heading mt-3">Apply to join OCHA.</h2>
                     <p className="body-copy mt-5 text-lg text-[var(--muted)]">
                         Tell us about your business so we can prepare the right onboarding experience when OCHA launches.
                     </p>
@@ -144,6 +154,24 @@ export function WaitlistFormSection() {
                                     </FormItem>
                                 )}
                             />
+                            <div className="grid gap-5 md:grid-cols-2">
+                                {socialFields.map((social) => (
+                                    <FormField
+                                        key={social.name}
+                                        control={form.control}
+                                        name={social.name}
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>{social.label} (optional)</FormLabel>
+                                                <FormControl>
+                                                    <Input placeholder={social.placeholder} {...field} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                ))}
+                            </div>
                             <div className="grid gap-5 md:grid-cols-2">
                                 <FormField
                                     control={form.control}
