@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { JoinWaitlistSection } from "@/components/sections/JoinWaitlistSection";
 import { ProblemsSection } from "@/components/sections/ProblemsSection";
+import { TeamSection } from "@/components/sections/TeamSection";
 import { VideoSection } from "@/components/sections/VideoSection";
 import { WaitlistFormSection } from "@/components/sections/WaitlistFormSection";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <HowItWorksSection />
         <JoinWaitlistSection />
         <WaitlistFormSection />
+        <TeamSection />
         <FAQSection />
       </main>
       <Footer />
